@@ -25,7 +25,6 @@ class Read_csv{
     public function reader():void
     {
             $response = null;
-            $response["data"] = null;
             $data = fgetcsv($this->handle, null, ",");
             if($data !== FALSE) {
                 $_SESSION["offset"] = ftell($this->handle);

@@ -1,4 +1,4 @@
-# read_csv_demo1
-1万件のCSVを読み込ませるPHPコード雛形。
-ダミーCSV 👉 https://testdata.userlocal.jp/
-https://www.youtube.com/watch?v=kisMPqY2hIA
+# 1万件のCSVを読み込ませるPHPコード雛形。  
+ダミーCSVはこちらからダウンロードできます。 👉 https://testdata.userlocal.jp/    
+
+[![動作確認動画](https://img.youtube.com/vi/kisMPqY2hIA/0.jpg)](https://www.youtube.com/watch?v=kisMPqY2hIA)

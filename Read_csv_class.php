@@ -38,12 +38,17 @@ class Read_csv{
     }
 }
 
-if (isset($_POST["csrf_token"])  && $_POST["csrf_token"] === $_SESSION['csrf_token']) {
-    $_SESSION["offset"] = (int)strip_tags($_POST["reset_flag"])===1?null:$_SESSION["offset"];
-    $filename = strip_tags($_POST["filename"]);
-    $cnt = (int)strip_tags($_POST["cnt"]);
-    $Read_csv = new Read_csv($filename,$cnt);
+if (isset(d_xss($_POST["csrf_token"]))  && d_xss($_POST["csrf_token"]) === $_SESSION['csrf_token']) {
+    $_SESSION["offset"] = (int)d_xss($_POST["reset_flag"])===1?null:d_xss($_SESSION["offset"]);
+    $filename = d_xss($_POST["filename"]);
+    $cnt = (int)d_xss($_POST["cnt"]);
+    //$Read_csv = new Read_csv($filename,$cnt);
     $Read_csv = null;
  }else{
     print "";
  }
+ function d_xss($data){
+    $data = strip_tags($data);
+    $data = htmlspecialchars($data,ENT_QUOTES);
+    return $data;
+}

@@ -42,7 +42,7 @@ if (isset(d_xss($_POST["csrf_token"]))  && d_xss($_POST["csrf_token"]) === $_SES
     $_SESSION["offset"] = (int)d_xss($_POST["reset_flag"])===1?null:d_xss($_SESSION["offset"]);
     $filename = d_xss($_POST["filename"]);
     $cnt = (int)d_xss($_POST["cnt"]);
-    //$Read_csv = new Read_csv($filename,$cnt);
+    //👉$Read_csv = new Read_csv($filename,$cnt);
     $Read_csv = null;
  }else{
     print "";

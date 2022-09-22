@@ -38,7 +38,7 @@ class Read_csv{
     }
 }
 
-if (isset(d_xss($_POST["csrf_token"]))  && d_xss($_POST["csrf_token"]) === $_SESSION['csrf_token']) {
+if (isset($_POST["csrf_token"])  && d_xss($_POST["csrf_token"]) === $_SESSION['csrf_token']) {
     $_SESSION["offset"] = (int)d_xss($_POST["reset_flag"])===1?null:d_xss($_SESSION["offset"]);
     $filename = d_xss($_POST["filename"]);
     $cnt = (int)d_xss($_POST["cnt"]);
